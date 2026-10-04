@@ -1,0 +1,66 @@
+/* Temple list component: .temples, .temple-name, .temple-status
+   Style the status badges differently based on class (.open, .construction). */
+
+/* TODO: Style the temple list */
+
+.temple-list {
+    margin-block: var(--space-lg);
+
+}
+
+.temples {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-block: var(--space-md);
+    border-radius: var(--rounded);
+    background-color: color-mix(var(--color-background), var(--color-accent) 25%);
+    padding: 0;
+    overflow: hidden;
+
+    li {
+        padding-inline: var(--space-lg);
+        padding-block: var(--space-md);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        gap: var(--space-md);
+        font-weight: 700;
+
+        @media (width >= 48rem) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        & > * {
+            text-align: center;
+            height: fit-content;
+            margin-block: auto;
+        }
+    }
+
+    & > :nth-child(odd) {
+        background-color: color-mix(in oklch, var(--color-accent), white);
+    }
+
+    .temple-name {
+        font-style: italic;
+    }
+}
+
+.temple-status {
+    border-style: solid;
+    width: fit-content;
+    border-radius: var(--rounded-pill);
+    padding-inline: var(--space-md);
+    padding-block: var(--space-sm);
+    margin-inline: auto;
+
+    &:where(.open) {
+        background-color: color-mix(green, white 25%);
+    }
+
+    &:where(.construction) {
+        background-color: color-mix(orange, gray 25%);
+    }
+
+}

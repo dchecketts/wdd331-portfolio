@@ -1,0 +1,64 @@
+/* Button components: .btn, .primary, .secondary, disabled state
+   Use native nesting for pseudo-classes and modifiers. */
+
+/* TODO: Style the button components */
+
+.actions h2 {
+    margin-left: var(--space-md);
+}
+
+.button-group {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+    align-items: center;
+    margin-block: var(--space-md);
+}
+
+.btn {
+    width: 100%;
+    min-width: fit-content;
+    white-space: nowrap;
+    flex: 1 0 max-content;
+    background-color: var(--color-primary);
+    border-radius: var(--rounded);
+    border: none;
+    color: color-mix(in oklch, var(--color-text), white 90%);
+    padding-inline: var(--space-md);
+    padding-block: var(--space-sm);
+
+    &:hover {
+        cursor: pointer;
+
+    }
+
+    &:where(.primary) {
+        background-color: color-mix(in oklch, var(--color-primary), black 40%);
+
+        &:hover {
+            background-color: color-mix(in oklch, var(--color-primary), black);
+
+        }
+
+    }
+
+    &:where(.secondary) {
+        background-color: color-mix(in oklch, var(--color-primary), black 10%);
+
+        &:hover {
+            background-color: color-mix(in oklch, var(--color-primary), black 20%);
+
+        }
+
+    }
+
+    &:is(:disabled) {
+        background-color: color-mix(in oklch, var(--color-primary), white 60%);
+        cursor: default;
+
+    }
+
+}
