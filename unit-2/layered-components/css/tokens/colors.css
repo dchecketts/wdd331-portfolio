@@ -1,0 +1,11 @@
+/* Color tokens: define all color values for the site.
+   Name by purpose (--color-primary, --color-surface)
+   not appearance (--blue, --light-gray). */
+:root {
+    /* TODO: Define color tokens here */
+
+    --color-primary: oklch(62.3% 0.214 259.81);
+    --color-background: color-mix(in oklch, oklch(62.3% 0.214 259.81), white 90%);
+    --color-text: color-mix(in oklch, oklch(62.3% 0.214 259.81), black);
+    --color-accent: oklch(28.2% 0.091 267.94);
+}
