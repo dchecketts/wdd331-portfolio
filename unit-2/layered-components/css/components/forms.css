@@ -3,6 +3,16 @@
 
 /* TODO: Style the form components */
 
+:focus-visible {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 3px solid orange;
+    outline-offset: 2px;
+    border-radius: var(--rounded);
+}
+
 .study-note {
     text-align: center;
     margin-bottom: var(--space-md);
@@ -50,10 +60,6 @@
             border-radius: var(--rounded);
             font-family: var(--font), sans-serif;
             font-size: max(var(--unit) * 3);
-
-            :focus-visible {
-                background-color: orange;
-            }
 
         }
 
