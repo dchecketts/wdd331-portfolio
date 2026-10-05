@@ -6,8 +6,15 @@
 .site-nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
     padding-inline: var(--space-lg);
     padding-block: var(--space-md);
+    flex-direction: column-reverse;
+
+    @media (width >= 48rem) {
+        flex-direction: row;
+    }
 
 }
 
