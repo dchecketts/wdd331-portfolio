@@ -1,0 +1,21 @@
+.description {
+    /*border: black solid;*/
+    text-align: justify;
+
+    @media (width >= 48rem) {
+        text-align: center;
+        margin-inline: auto;
+        max-width: calc(var(--unit) * 192);
+    }
+}
+
+#assignments {
+    padding-block: calc(10 * 0.25rem);
+    padding-inline: calc(15 * 0.25rem);
+
+    ul {
+        padding-left: calc(5 * 0.25rem);
+
+    }
+
+}
