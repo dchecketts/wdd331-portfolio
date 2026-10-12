@@ -1,0 +1,30 @@
+body {
+    font-family: var(--font-body), sans-serif;
+    color: var(--color-text);
+    background-color: color-mix(var(--color-bg), white 75%);
+    line-height: 1.6;
+    padding: var(--space-lg);
+
+}
+
+main > div {
+    text-align: center;
+
+    code {
+        background-color: color-mix(var(--color-bg), black 10%);
+        padding: calc(0.25rem / 2);
+        border-radius: 0.25rem;
+
+    }
+
+}
+
+a {
+    color: var(--color-primary);
+
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+    
+}
