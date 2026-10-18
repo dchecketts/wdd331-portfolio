@@ -11,6 +11,10 @@ Each week I add new pages and styles as I work through the course
 assignments. The site deploys automatically to GitHub Pages on
 every push to main.
 
+## Features
+
+The CSS is organized following a hybrid CubeCSS/ITCSS structure, and also features a dynamic dark mode using minimal JavaScript (State tracking). The dark mode is primarily driven by CSS
+
 ## Pages
 
 - [Home](index.html)

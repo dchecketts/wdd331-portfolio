@@ -1,11 +1,11 @@
 .description {
-    /*border: black solid;*/
     text-align: justify;
+    padding-inline: var(--spacing-lg);
 
     @media (width >= 48rem) {
         text-align: center;
         margin-inline: auto;
-        max-width: calc(var(--unit) * 192);
+        max-width: calc(var(--spacing-xs) * 192);
     }
 }
 
