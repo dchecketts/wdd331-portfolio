@@ -131,9 +131,8 @@ img {
 
 .clipped {
     display: flex;
-    background-color: cornflowerblue;
     clip-path: polygon(3% 0, 100% 0, 100% 100%, 0% 100%);
-    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    background-image: linear-gradient(to right, cornflowerblue 70%, transparent 100%);
     max-width: 90%;
     margin-inline: auto;
 
