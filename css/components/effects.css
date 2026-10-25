@@ -1,0 +1,97 @@
+.hero {
+    position: relative;
+    display: inline-block;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 50%, var(--color-bg) 100%);
+}
+
+.hero-image {
+    display: block;
+}
+
+.hero-content {
+    z-index: 12;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    text-shadow:
+            1px 1px 2px var(--color-bg),
+            0 0 1em var(--color-bg),
+            0 0 0.2em var(--color-bg);
+}
+
+.glass-section {
+    position: relative;
+    display: inline-block;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    padding-block: var(--spacing-lg);
+
+}
+
+.glass-section::after {
+    content: "";
+    position: absolute;
+    inset: auto 1rem 1rem;
+}
+
+.glass-background img {
+    display: block;
+}
+
+.glass-panel {
+    z-index: 12;
+    color: var(--color-text);
+    background: color-mix(in oklch, var(--color-bg) 45%, transparent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    align-content: end;
+    padding: var(--spacing-md);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    @media (prefers-reduced-motion: reduce) {
+        background: var(--color-bg);
+
+    }
+
+}
+
+.icon-section {
+    padding-block: var(--spacing-lg);
+}
+
+.icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+
+    & svg {
+        flex: 1 1 12rem;
+        min-width: 0;
+        max-width: 18rem;
+        height: auto;
+
+        filter: drop-shadow(4px 8px 6px var(--shadow-color));
+    }
+
+}
+
+svg {
+    fill: var(--color-text);
+    width: 100%;
+    height: auto;
+    display: block;
+
+}

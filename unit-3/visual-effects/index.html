@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visual Effects</title>
+  <script src="../../js/theme-preference.js"></script>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="site-nav">
+  <a href="../../index.html">&larr; Home</a>
+  <ul>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#" aria-current="page">Effects</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+
+<!-- HERO: Use a gradient overlay and text-shadow for depth -->
+<header class="hero">
+  <img
+          class="hero-image"
+          src="https://picsum.photos/seed/hero-effects/1200/500"
+          alt="Landscape placeholder for hero section"
+  >
+  <div class="hero-content">
+    <h1>Visual Effects Showcase</h1>
+    <p>Shadows, gradients, and filters working together.</p>
+  </div>
+</header>
+
+<main>
+  <!-- CARDS: Elevation shadows, hover transitions -->
+  <section class="card-section">
+    <h2>Elevation Cards</h2>
+    <div class="cards">
+      <article class="card">
+        <img
+                class="card-image"
+                src="https://picsum.photos/seed/card-1/400/250"
+                alt="Placeholder image"
+        >
+        <!-- Replace placeholder images with your own if you prefer -->
+        <div class="card-body">
+          <h3>Layered Shadows</h3>
+          <p>
+            Multiple shadow layers create realistic depth
+            that changes on hover.
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <img
+                class="card-image"
+                src="https://picsum.photos/seed/card-2/400/250"
+                alt="Placeholder image"
+        >
+        <div class="card-body">
+          <h3>Gradient Surfaces</h3>
+          <p>
+            A subtle gradient on the card background adds
+            dimension without distracting from content.
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <img
+                class="card-image"
+                src="https://picsum.photos/seed/card-3/400/250"
+                alt="Placeholder image"
+        >
+        <div class="card-body">
+          <h3>Filtered Images</h3>
+          <p>
+            A grayscale or sepia filter on the image that
+            lifts on hover draws attention to active cards.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GLASS PANEL: backdrop-filter for frosted glass -->
+  <section class="glass-section">
+    <div class="glass-background">
+      <img
+              src="https://picsum.photos/seed/glass-bg/1200/400"
+              alt="Background image behind glass panel"
+              class="glass-bg-image"
+      >
+    </div>
+    <div class="glass-panel">
+      <h2>Frosted Glass</h2>
+      <p>
+        This panel uses backdrop-filter to blur and saturate the
+        image behind it. The text stays sharp while the background
+        softens into a frosted surface.
+      </p>
+    </div>
+  </section>
+
+  <!-- ICON ROW: drop-shadow on transparent images -->
+  <section class="icon-section">
+    <h2>Drop Shadow on Transparent Images</h2>
+    <p>
+      These icons use drop-shadow() instead of box-shadow so the shadow
+      follows the actual shape of each image rather than its bounding box.
+    </p>
+    <div class="icon-row">
+      <!-- Replace these with your own transparent PNGs or SVGs -->
+      <svg role="img" height="24px" viewBox="0 -960 960 960">
+
+        <title>Heart icon</title>
+
+        <path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/>
+      </svg>
+      <svg role="img" height="24px" viewBox="0 -960 960 960">
+
+        <title>Star icon</title>
+
+        <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
+      </svg>
+      <svg role="img" height="24px" viewBox="0 -960 960 960">
+
+        <title>Bookmark icon</title>
+
+        <path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/>
+      </svg>
+      <svg role="img" height="24px" viewBox="0 -960 960 960">
+
+        <title>Chat bubble</title>
+
+        <path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CHOOSE TOPIC: clip-path() and mask-image() -->
+
+  <section class="clip-mask">
+    <div class="clipped">
+      <img src="../../images/Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg" alt="Milky Way Galaxy seen from Nevada" class="angled">
+      <div>
+        <h2>Clip-Path & Mask-Image</h2>
+        <p>The image to the left of this paragraph uses clip-path(), while the four images below (And this section) make use of mask-image() and related features.</p>
+      </div>
+    </div>
+    <div class="image-list">
+      <img src="../../images/split-image-05-r2-c1.png" alt="A section of the Teton Mountain Range" title="Heart icon">
+      <img src="../../images/split-image-06-r2-c2.png" alt="A section of the Teton Mountain Range" title="Star icon">
+      <img src="../../images/split-image-07-r2-c3.png" alt="A section of the Teton Mountain Range" title="Bookmark icon">
+      <img src="../../images/split-image-08-r2-c4.png" alt="A section of the Teton Mountain Range" title="Chat bubble">
+    </div>
+
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 My portfolio</p>
+</footer>
+</body>
+</html>
