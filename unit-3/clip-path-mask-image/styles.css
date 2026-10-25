@@ -1,0 +1,102 @@
+:root {
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0;
+}
+
+header {
+    padding: var(--spacing-lg);
+}
+
+main {
+    margin-block: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+
+    h1 {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    & > section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > p {
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+        }
+    }
+}
+
+footer {
+    background-color: light-dark(black, gray);
+    color: light-dark(white, black);
+    padding: var(--spacing-lg);
+}
+
+/* Masking and Clip Path */
+
+/* Circle, centered with 40% radius */
+.circle {
+    clip-path: circle(40%);
+}
+
+/* Ellipse, horizontal and vertical radii */
+.ellipse {
+    clip-path: ellipse(50% 35% at center);
+}
+
+/* Inset, rectangular crop with optionally rounded corners */
+.inset {
+    clip-path: inset(10% round 1rem);
+}
+
+/* Polygon, arbitrary shape defined by vertex coordinates */
+.polygon {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* Angled bottom edge */
+.angled-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.animated {
+    clip-path: circle(0% at center);
+    transition: clip-path 0.5s ease;
+
+}
+
+section:hover > .animated {
+    clip-path: circle(75% at center);
+}
+
+.fade {
+    mask-image: linear-gradient(
+    to bottom,
+    black 70%,
+    transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+            to bottom,
+            black 70%,
+            transparent 100%
+    );
+}
+
+.masked {
+    mask-image: url("./search_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-mode: alpha;
+}

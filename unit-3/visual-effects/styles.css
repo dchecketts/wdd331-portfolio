@@ -1,0 +1,162 @@
+.site-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 700;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.hero {
+    margin-bottom: var(--spacing-xl);
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    padding-block: var(--spacing-xl);
+    margin-inline: auto;
+    width: fit-content;
+    justify-content: center;
+}
+
+.card {
+    border-radius: var(--radius-md);
+    width: min-content;
+    text-wrap: wrap;
+    overflow: hidden;
+
+
+    @media (width >= 48rem) {
+        transform: scale(1);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease-in-out;
+        filter: grayscale(100%);
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+            filter: grayscale(0%);
+        }
+    }
+
+    .card-image {
+        display: block;
+        width: 300px;
+        height: auto;
+
+    }
+
+    .card-body {
+        padding: var(--spacing-md);
+
+        background: radial-gradient( circle at top left,
+        var(--color-surface) 0%,
+        var(--color-bg) 100%
+
+        );
+
+    }
+
+}
+
+.image-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+
+    img {
+        max-width: 12rem;
+        height: auto;
+    }
+
+    img:nth-child(1) {
+        mask-image: url("../../images/favorite_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+        mask-size: cover;
+        mask-position: center;
+        mask-repeat: no-repeat;
+    }
+
+    img:nth-child(2) {
+        mask-image: url("../../images/star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+        mask-size: cover;
+        mask-position: center;
+        mask-repeat: no-repeat;
+    }
+
+    img:nth-child(3) {
+        mask-image: url("../../images/bookmark_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+        mask-size: cover;
+        mask-position: center;
+        mask-repeat: no-repeat;
+    }
+
+    img:nth-child(4) {
+        mask-image: url("../../images/chat_bubble_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+        mask-size: cover;
+        mask-position: center;
+        mask-repeat: no-repeat;
+    }
+
+}
+
+.clipped {
+    display: flex;
+    background-color: cornflowerblue;
+    clip-path: polygon(3% 0, 100% 0, 100% 100%, 0% 100%);
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    max-width: 90%;
+    margin-inline: auto;
+
+
+    .angled {
+        max-width: 12%;
+        clip-path: polygon(25% 0, 75% 0, 50% 100%, 0% 100%);
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div p {
+        flex-wrap: wrap;
+        max-width: 75%;
+    }
+}
+
+.clip-mask {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
