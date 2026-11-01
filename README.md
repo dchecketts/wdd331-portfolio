@@ -20,3 +20,5 @@ The CSS is organized following a hybrid CubeCSS/ITCSS structure, and also featur
 - [Home](index.html)
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-2/layered-components/index.html)
+- [Grid Layout Cards](unit-4/grid-layouts/cards.html)
+- [Grid Layout Editorial](unit-4/grid-layouts/editorial.html)
