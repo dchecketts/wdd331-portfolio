@@ -46,18 +46,23 @@ html {
     --color-link-hover: light-dark(var(--seed-link-hover), oklch(0.72 0.18 240));
     --color-border: light-dark(var(--seed-border), oklch(0.32 0.02 260));
     --color-border-strong: light-dark(var(--seed-border-strong), oklch(0.38 0.02 260));
+
     /* Tint the native checkboxes, radios, and range sliders */
     accent-color: var(--color-accent);
+
     /* ---- Header chrome ---- */
     --header-bg: var(--color-accent);
     --header-text: light-dark(#ffffff, #f0f4f8);
+
     /* ---- Theme toggle (consumed by theme-toggle.css) ---- */
     --theme-toggle-bg: color-mix(in srgb, var(--header-text) 20%, var(--header-bg));
     --theme-toggle-border: color-mix(in srgb, var(--header-text) 40%, var(--header-bg));
     --theme-toggle-bg-hover: color-mix(in srgb, var(--header-text) 30%, var(--header-bg));
     --theme-toggle-border-hover: color-mix(in srgb, var(--header-text) 55%, var(--header-bg));
+
     /* ---- Shadows ---- */
     --shadow-color: light-dark(rgb(0 0 0 / 0.29), rgb(255 255 255 / 0.46));
     --shadow-sm: 0 1px 2px 0 var(--shadow-color);
     --shadow-md: 0 1px 3px 0 var(--shadow-color);
+    
 }

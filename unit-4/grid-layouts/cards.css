@@ -1,0 +1,133 @@
+header {
+    text-align: center;
+    margin-block-end: var(--spacing-lg);
+
+    p {
+        color: var(--color-text-muted);
+        font-style: italic;
+
+    }
+
+}
+
+.articles-page {
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+
+    main {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-template-areas:
+                    "navigation navigation"
+                    "content content";
+        gap: var(--spacing-md);
+
+        @media (width >= 48rem) {
+            grid-template-areas: "navigation content";
+        }
+
+    }
+
+    .card-grid {
+        grid-area: content;
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+        margin-block: auto;
+        grid-auto-rows: fit-content(400px);
+        gap: var(--spacing-md);
+        padding-inline: var(--spacing-md);
+        padding-block: var(--spacing-md);
+
+    }
+
+}
+
+.card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+
+}
+
+.card > div:first-child {
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-accent);
+
+}
+
+.card > div:last-child {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-block: var(--spacing-md);
+
+    p {
+        padding-inline: var(--spacing-md);
+        margin-block-end: var(--spacing-md);
+
+    }
+
+}
+
+.card a {
+    margin-block-start: auto;
+}
+
+nav {
+    grid-area: navigation;
+    background-color: var(--color-surface);
+
+    padding-inline: var(--spacing-md);
+    padding-block: var(--spacing-lg);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+
+    a {
+        color: contrast-color(var(--color-surface));
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: var(--spacing-md);
+        flex-direction: row;
+
+        li {
+            list-style: none;
+
+        }
+
+        @media (width >= 48rem) {
+            flex-direction: column;
+        }
+
+    }
+
+    @media (width >= 48rem) {
+        flex-direction: column;
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+    }
+
+}
+
+footer {
+    text-align: center;
+    padding-block: var(--spacing-md);
+}
