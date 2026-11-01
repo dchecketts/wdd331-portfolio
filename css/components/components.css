@@ -7,6 +7,7 @@
         margin-inline: auto;
         max-width: calc(var(--spacing-xs) * 192);
     }
+
 }
 
 #assignments {
@@ -15,6 +16,41 @@
 
     ul {
         padding-left: calc(5 * 0.25rem);
+
+    }
+
+}
+
+.site-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--color-bg);
+
+    nav {
+        display: flex;
+        gap: var(--spacing-sm);
+
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 700;
+
+        &:hover {
+            text-decoration: underline;
+
+        }
 
     }
 

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>CSS Intrinsic Sizing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>CSS Intrinsic Sizing</h1>
+    <p>
+        Exploring content-driven sizing with CSS Grid.
+    </p>
+</header>
+
+<main>
+    <section>
+        <h2>1. min-content</h2>
+        <p>
+            The first column shrinks to the width of its
+            longest unbreakable word.
+        </p>
+
+        <div class="demo min-content-demo">
+            <div class="label">Name</div>
+            <div>Alex Chen</div>
+
+            <div class="label">Phone Number</div>
+            <div>555-123-4567</div>
+
+            <div class="label">Quantity</div>
+            <div>12</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. max-content</h2>
+        <p>
+            The first column grows to fit its longest
+            label without wrapping.
+        </p>
+
+        <div class="demo max-content-demo">
+            <div class="label">Done</div>
+            <div>Publish homepage</div>
+
+            <div class="label">Awaiting Final Approval</div>
+            <div>Review submission</div>
+
+            <div class="label">Draft</div>
+            <div>Update documentation</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. fit-content()</h2>
+        <p>
+            The first column grows with its content,
+            but cannot exceed its 180px cap.
+        </p>
+
+        <div class="demo fit-content-demo">
+            <div class="label">Grid</div>
+            <div>Short label</div>
+
+            <div class="label">Flexbox</div>
+            <div>Medium label</div>
+
+            <div class="label">
+                Intrinsic Sizing Keywords
+            </div>
+            <div>Long label wraps when necessary</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Fixed Width vs. Intrinsic Width</h2>
+        <p>
+            Compare a percentage-based sidebar against
+            a sidebar sized by its content.
+        </p>
+
+        <h3>Percentage: 25% 1fr</h3>
+        <div class="demo percentage-demo">
+            <nav class="label">
+                <a href="#comparison">Home</a>
+                <a href="#comparison">Documentation</a>
+                <a href="#comparison">Account Settings</a>
+            </nav>
+            <div id="comparison">
+                Main content area
+            </div>
+        </div>
+
+        <h3>Intrinsic: max-content 1fr</h3>
+        <div class="demo intrinsic-demo">
+            <nav class="label">
+                <a href="#comparison">Home</a>
+                <a href="#comparison">Documentation</a>
+                <a href="#comparison">Account Settings</a>
+            </nav>
+            <div>Main content area</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. minmax() with min-content</h2>
+        <p>
+            The first column can expand, but its minimum
+            size is determined by its content.
+        </p>
+
+        <div class="demo minmax-demo">
+            <div class="label">
+                Supercalifragilistic
+            </div>
+            <div>
+                This column shares the remaining space.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Same Text, Different Sizing</h2>
+        <p>
+            Compare the three sizing keywords on
+            identical content.
+        </p>
+
+        <div class="comparison">
+            <h3>min-content</h3>
+            <div class="sample sample-min">
+                Responsive Web Design
+            </div>
+
+            <h3>max-content</h3>
+            <div class="sample sample-max">
+                Responsive Web Design
+            </div>
+
+            <h3>fit-content</h3>
+            <div class="sample sample-fit">
+                Responsive Web Design
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>
+        Resize the browser and inspect the grid
+        tracks using developer tools.
+    </p>
+</footer>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

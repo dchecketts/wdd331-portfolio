@@ -97,34 +97,30 @@ img {
     img {
         max-width: 12rem;
         height: auto;
+
+        mask-size: cover;
+        mask-position: center;
+        mask-repeat: no-repeat;
     }
 
     img:nth-child(1) {
         mask-image: url("../../images/favorite_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
-        mask-size: cover;
-        mask-position: center;
-        mask-repeat: no-repeat;
+
     }
 
     img:nth-child(2) {
         mask-image: url("../../images/star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
-        mask-size: cover;
-        mask-position: center;
-        mask-repeat: no-repeat;
+
     }
 
     img:nth-child(3) {
         mask-image: url("../../images/bookmark_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
-        mask-size: cover;
-        mask-position: center;
-        mask-repeat: no-repeat;
+
     }
 
     img:nth-child(4) {
         mask-image: url("../../images/chat_bubble_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
-        mask-size: cover;
-        mask-position: center;
-        mask-repeat: no-repeat;
+
     }
 
 }
