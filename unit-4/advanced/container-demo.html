@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Query Demo</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="container-demo.css">
+</head>
+<body>
+<header>
+    <h1>Container Query Demo</h1>
+    <p>The same component responds to the size of its container.</p>
+</header>
+
+<main>
+    <div class="layout-grid">
+        <aside class="sidebar-wrapper">
+            <h2>Sidebar Content</h2>
+            <article class="feature-card">
+                <img src="../../images/Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg"
+                     alt="Milky Way over a desert landscape">
+                <div class="card-body">
+                    <h3>Responsive Feature</h3>
+                    <p>This card is inside a narrow sidebar container, so its content begins in a stacked layout.</p>
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+        </aside>
+        <section class="main-wrapper">
+            <h2>Main Content Context</h2>
+            <article class="feature-card">
+                <img src="../../images/Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg"
+                     alt="Milky way over a desert landscape">
+                <div class="card-body">
+                    <h3>Responsive Feature</h3>
+                    <p>This same component is inside a wider container, so a container query can place the image beside the text.</p>
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; Daniel Checketts 2026</p>
+</footer>
+
+</body>
+</html>
