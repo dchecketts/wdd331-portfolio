@@ -1,0 +1,154 @@
+@import "tailwindcss";
+/* From unit-7/reimagined-home -> npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css --watch */
+
+:root {
+    color-scheme: light dark;
+}
+
+
+/* Theme Variables */
+@theme {
+    /* Colors */
+    --color-brand-50:  oklch(from var(--color-brand-500) calc(l + (1 - l) * 0.92) calc(c * 0.15) h);
+    --color-brand-100: oklch(from var(--color-brand-500) calc(l + (1 - l) * 0.82) calc(c * 0.30) h);
+    --color-brand-200: oklch(from var(--color-brand-500) calc(l + (1 - l) * 0.64) calc(c * 0.50) h);
+    --color-brand-300: oklch(from var(--color-brand-500) calc(l + (1 - l) * 0.44) calc(c * 0.70) h);
+    --color-brand-400: oklch(from var(--color-brand-500) calc(l + (1 - l) * 0.22) calc(c * 0.90) h);
+
+    --color-brand-500: oklch(from #006EB6 l c h);
+
+    --color-brand-600: oklch(from var(--color-brand-500) calc(l * 0.85) calc(c * 0.95) h);
+    --color-brand-700: oklch(from var(--color-brand-500) calc(l * 0.68) calc(c * 0.90) h);
+    --color-brand-800: oklch(from var(--color-brand-500) calc(l * 0.52) calc(c * 0.85) h);
+    --color-brand-900: oklch(from var(--color-brand-500) calc(l * 0.36) calc(c * 0.80) h);
+    --color-brand-950: oklch(from var(--color-brand-500) calc(l * 0.20) calc(c * 0.75) h);
+
+
+    --color-black: oklch(from #000000 l c h);
+    --color-white: oklch(from #FFFFFF l c h);
+
+    --color-accent-dark: oklch(from #214491 l c h);
+    --color-accent: oklch(from #4F9ACF l c h);
+    --color-accent-light: oklch(from #A0D4ED l c h);
+    --color-accent-gray: oklch(from #949598 l c h);
+
+
+
+    --color-background: light-dark(var(--color-white), var(--color-black));
+    --color-text: light-dark(var(--color-black), var(--color-white))
+
+    /* Fonts */
+    /* Official Site lists: Ariel, Times New Roman, Acumin, and Minion. Alternating between Sans and Serif fonts */
+    /* I decided to use Tailwind's default sans-serif fonts */
+}
+
+/* Default Styling */
+body {
+    @apply bg-background text-text flex flex-col min-h-screen;
+
+    main {
+        @apply flex-grow overflow-hidden;
+    }
+}
+
+@utility arrow-link {
+    @apply text-brand-500 hover:text-brand-600 inline-flex items-center gap-1;
+
+    & span:nth-of-type(2) {
+        @apply transition-transform duration-300;
+    }
+
+    &:hover span:nth-of-type(2) {
+        @apply translate-x-1;
+    }
+}
+
+@utility content-section {
+    @apply px-5;
+}
+
+@utility button-list {
+    @apply flex flex-col items-center my-5 w-fit mx-auto;
+
+    li {
+        @apply button-link w-full;
+    }
+}
+
+@utility button-link {
+    @apply text-white bg-brand-500 rounded-full px-3 py-2 my-4 text-center;
+}
+
+
+/* Temporary Rules to focus on styling one section at a time */
+footer, #main-nav {
+    display: none;
+}
+
+#video-carousel, #graduates, #campus-news {
+    display: none;
+}
+
+/* Classes applied to content */
+.logo-image {
+    @apply aspect-square min-h-[36px];
+}
+
+#head-bar {
+    ul li a {
+        @apply flex items-center gap-1 text-white hover:underline;
+    }
+}
+
+.hero {
+    @apply relative w-full max-h-100 overflow-hidden p-0;
+
+    img {
+        @apply w-full aspect-video object-cover;
+    }
+
+    div {
+        @apply absolute inset-0 flex items-center justify-center bg-black/20;
+
+        h1 {
+            @apply text-white text-shadow-lg text-3xl md:text-6xl font-bold text-center;
+
+            span {
+                @apply whitespace-nowrap;
+            }
+        }
+    }
+}
+
+.icon-bar {
+    @apply bg-accent-gray/10 font-bold min-h-50 py-10 flex;
+
+    ul {
+        @apply flex flex-wrap justify-center gap-10 my-auto w-full;
+
+        li a {
+            @apply flex flex-col items-center text-text text-sm;
+        }
+    }
+
+    img {
+        @apply aspect-square w-15;
+    }
+}
+
+.image-container {
+    width: 100%;
+    height: 256px;
+    background-color: var(--color-background);
+}
+
+.fading-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* The mask makes the top transparent, letting the container background show through */
+    -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+}
+
