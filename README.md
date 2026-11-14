@@ -13,7 +13,9 @@ every push to main.
 
 ## Features
 
-The CSS is organized following a hybrid CubeCSS/ITCSS structure, and also features a dynamic dark mode using minimal JavaScript (State tracking). The dark mode is primarily driven by CSS
+The CSS is organized following a hybrid CubeCSS/ITCSS structure, and also features a dynamic dark mode using minimal JavaScript (State tracking). The dark mode is primarily driven by CSS.
+
+Headings use Atkinson Hyperlegible Next, and body text uses Nanum Gothic
 
 ## Pages
 
