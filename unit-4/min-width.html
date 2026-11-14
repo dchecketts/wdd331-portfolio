@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min-Width</title>
+    <script src="../js/theme-preference.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="min-width.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="../">Home</a>
+        <ul>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="page-layout">
+    <aside class="article-sidebar">
+        <nav class="article-toc" aria-label="Article contents">
+            <h2>Contents</h2>
+
+            <ol>
+                <li>
+                    <a href="#min-width">Flex items and min-width</a>
+                </li>
+                <li>
+                    <a href="#min-height">Column flex and min-height</a>
+                </li>
+                <li>
+                    <a href="#grid">Flexbox versus grid</a>
+                </li>
+                <li>
+                    <a href="#box-sizing">Box sizing</a>
+                </li>
+                <li>
+                    <a href="#summary">Summary</a>
+                </li>
+            </ol>
+        </nav>
+    </aside>
+
+    <article class="article-content">
+        <header class="article-header">
+            <p class="eyebrow">Advanced CSS</p>
+            <h1>Understanding Minimum Sizes in CSS Layouts</h1>
+
+            <p class="article-introduction">
+                This article explores how automatic minimum sizes affect flex
+                and grid layouts, and how box sizing affects element widths.
+            </p>
+        </header>
+
+        <section class="article-section" id="min-width">
+            <h2>Flex items and min-width</h2>
+
+            <p>
+                Flex items can refuse to shrink when their contents have a
+                large intrinsic minimum width.
+            </p>
+
+            <div class="demo-card">
+                <h3>Sidebar and content demonstration</h3>
+
+                <div class="flex-demo">
+                    <aside class="demo-sidebar">
+                        Sidebar
+                    </aside>
+
+                    <div class="demo-content">
+                        <p>
+                            File uploaded:
+                            <code>
+                                /home/student/projects/wdd331r/portfolio/unit-4/advanced/container-demo.html
+                            </code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                The long filename above is useful for demonstrating what
+                happens before and after applying <code>min-width: 0</code>.
+            </p>
+        </section>
+
+        <section class="article-section" id="min-height">
+            <h2>Column flex layouts and min-height</h2>
+
+            <p>
+                A column flex layout can have a similar problem on the vertical
+                axis.
+            </p>
+
+            <div class="demo-card">
+                <h3>Fixed-height scrolling panel</h3>
+
+                <div class="panel-demo">
+                    <header class="panel-demo-header">
+                        <h4>Panel heading</h4>
+                    </header>
+
+                    <div class="panel-demo-body">
+                        <p>
+                            This body contains more content than the panel can
+                            display at one time.
+                        </p>
+
+                        <p>
+                            Add additional paragraphs here so you can
+                            demonstrate vertical overflow.
+                        </p>
+
+                        <p>
+                            The body should become the scrollable part of the
+                            panel instead of forcing the entire panel to grow.
+                        </p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem corrupti nulla ducimus veniam consequatur. Incididunt dolore voluptas dolor provident imperdiet reprehenderit libero cupiditate corrupti voluptatum animi aut.</p>
+
+                        <p>Id sed vero blanditiis ipsum eligendi dolor non officia. Nam consectetur lorem qui voluptatum tempore. At voluptas veniam mollit possimus illum ducimus est expedita accusamus in ex sit. Enim deserunt pariatur vel culpa id ea dignissimos imperdiet cillum reprehenderit consequatur nulla.</p>
+
+                        <p>Esse ipsum adipiscing sed ex at possimus rerum ut consequat nihil tempore est. Velit reprehenderit laborum adipiscing est exercitation culpa officia qui maxime eos. Et aute est excepteur ut consectetur et aliquip imperdiet accusamus id. Duis odio in id mollit velit facere et.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit soluta in. Quas pariatur id ad sint sed magna est consectetur corrupti consequatur consequat cupiditate. Temporibus cumque similique ut qui nostrud non consequatur est quos aut. Proident accusamus in dolor et eiusmod quibusdam est. Sunt quis aliqua distinctio et sint.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit soluta in. Quas pariatur id ad sint sed magna est consectetur corrupti consequatur consequat cupiditate. Temporibus cumque similique ut qui nostrud non consequatur est quos aut. Proident accusamus in dolor et eiusmod quibusdam est. Sunt quis aliqua distinctio et sint.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit soluta in. Quas pariatur id ad sint sed magna est consectetur corrupti consequatur consequat cupiditate. Temporibus cumque similique ut qui nostrud non consequatur est quos aut. Proident accusamus in dolor et eiusmod quibusdam est. Sunt quis aliqua distinctio et sint.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit soluta in. Quas pariatur id ad sint sed magna est consectetur corrupti consequatur consequat cupiditate. Temporibus cumque similique ut qui nostrud non consequatur est quos aut. Proident accusamus in dolor et eiusmod quibusdam est. Sunt quis aliqua distinctio et sint.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit soluta in. Quas pariatur id ad sint sed magna est consectetur corrupti consequatur consequat cupiditate. Temporibus cumque similique ut qui nostrud non consequatur est quos aut. Proident accusamus in dolor et eiusmod quibusdam est. Sunt quis aliqua distinctio et sint.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article-section" id="grid">
+            <h2>Flexbox versus grid</h2>
+
+            <p>
+                Grid items can also need an explicit minimum width when they
+                contain long unbroken content.
+            </p>
+
+            <div class="demo-card">
+                <h3>Grid demonstration</h3>
+
+                <div class="grid-demo">
+                    <aside class="demo-sidebar">
+                        Grid sidebar
+                    </aside>
+
+                    <div class="grid-content">
+                        <p>
+                            <code>
+                                https://example.com/a-very-long-unbroken-address-that-could-overflow
+                            </code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article-section" id="box-sizing">
+            <h2>Box sizing</h2>
+
+            <p>
+                The default <code>content-box</code> model adds padding and
+                borders outside the declared width.
+            </p>
+
+            <div class="demo-card">
+                <h3>Comparing box-sizing values</h3>
+
+                <div class="box-sizing-demo">
+                    <div class="box-example content-box-example">
+                        <h4>Content box</h4>
+                        <p>
+                            Padding and border are added to the declared width.
+                        </p>
+                    </div>
+
+                    <div class="box-example border-box-example">
+                        <h4>Border box</h4>
+                        <p>
+                            Padding and border are included in the declared
+                            width.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article-section" id="summary">
+            <h2>Summary</h2>
+
+            <ul>
+                <li>
+                    <code>min-width: 0</code> allows a flex item to shrink
+                    horizontally.
+                </li>
+                <li>
+                    <code>min-height: 0</code> allows a column flex item to
+                    shrink vertically.
+                </li>
+                <li>
+                    <code>box-sizing: border-box</code> includes padding and
+                    borders in the declared width.
+                </li>
+            </ul>
+        </section>
+    </article>
+</main>
+<footer>
+    <p>&copy; Daniel Checketts 2026</p>
+</footer>
+</body>
+</html>

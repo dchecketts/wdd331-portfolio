@@ -1,11 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 :root {
 
     /* Typography */
+    --font-family-heading: "Atkinson Hyperlegible Next", var(--font-family-sans);
+    --font-family-body: "Nanum Gothic", var(--font-family-sans);
+
     --font-family-sans: system-ui, sans-serif;
     --font-family-mono: monospace;
-    --font-size-sm: 1.4rem;
-    --font-size-md: 1.6rem;
-    --font-size-lg: 1.8rem;
+
+    --font-size-md-min: 1.6rem;
+    --step: 0.2rem;
+    --vp-min: 20rem;
+    --vp-max: 80rem;
+
+    --fluid-add: calc(var(--step) * ((100vw - var(--vp-min)) / (var(--vp-max) - var(--vp-min))));
+
+    --font-size-xs: clamp(
+            var(--font-size-md-min) - (var(--step) * 2),
+            var(--font-size-md-min) - (var(--step) * 2) + var(--fluid-add),
+            var(--font-size-md-min) - var(--step)
+    );
+    --font-size-sm: clamp(
+            var(--font-size-md-min) - var(--step),
+            var(--font-size-md-min) - var(--step) + var(--fluid-add),
+            var(--font-size-md-min)
+    );
+    --font-size-md: clamp(
+            var(--font-size-md-min),
+            var(--font-size-md-min) + var(--fluid-add),
+            var(--font-size-md-min) + var(--step)
+    );
+    --font-size-lg: clamp(
+            var(--font-size-md-min) + var(--step),
+            var(--font-size-md-min) + var(--step) + var(--fluid-add),
+            var(--font-size-md-min) + (var(--step) * 2)
+    );
+    --font-size-xl: clamp(
+            var(--font-size-md-min) + (var(--step) * 2),
+            var(--font-size-md-min) + (var(--step) * 2) + var(--fluid-add),
+            var(--font-size-md-min) + (var(--step) * 3)
+    );
+
+    --font-size-body: var(--font-size-md);
+    --font-size-caption: var(--font-size-xs);
+    --font-size-heading-sm: var(--font-size-lg);
+    --font-size-heading-lg: var(--font-size-xl);
+    --font-size-display: var(--font-size-xl);
 
     /* Spacing */
     --spacing-xs: 0.25rem;
