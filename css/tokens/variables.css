@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
 
     /* Typography */
     --font-family-heading: "Atkinson Hyperlegible Next", var(--font-family-sans);
-    --font-family-body: "Nanum Gothic", var(--font-family-sans);
+    --font-family-body: "Atkinson Hyperlegible", var(--font-family-sans);
 
     --font-family-sans: system-ui, sans-serif;
     --font-family-mono: monospace;
@@ -43,7 +43,7 @@
             var(--font-size-md-min) + (var(--step) * 3)
     );
 
-    --font-size-body: var(--font-size-md);
+    --font-size-body: var(--font-size-xs);
     --font-size-caption: var(--font-size-xs);
     --font-size-heading-sm: var(--font-size-lg);
     --font-size-heading-lg: var(--font-size-xl);

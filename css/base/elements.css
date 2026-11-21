@@ -1,12 +1,17 @@
 body {
     font-family: var(--font-family-body), sans-serif;
+    font-size: var(--font-size-body);
     line-height: 1.6;
-    padding: var(--spacing-lg);
+
+    main {
+        padding: var(--spacing-lg);
+    }
 
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-heading), sans-serif;
+    font-size: var(--font-size-heading-lg);
 }
 
 main > div {
