@@ -6,128 +6,115 @@
     <meta name="description" content="Daniel Checketts' resume, including work experience, education, technical skills, projects, and certifications.">
     <title>Daniel Checketts | Resume</title>
     <script src="./js/theme-preference.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/resume.css">
 </head>
-<body>
-    <header>
-        <nav class="site-header">
-            <a href="/">Portfolio</a>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+<body class="resume-page">
+    <header class="screen-only">
+        <nav class="resume-nav">
+            <a class="resume-nav-brand" href="/">Portfolio</a>
+            <ul class="resume-nav-links">
+                <li><a class="resume-nav-link" href="#">About</a></li>
+                <li><a class="resume-nav-link" href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="resume-main">
         <section class="resume-header">
             <div class="resume-summary">
                 <div>
-                    <h1>Daniel Checketts</h1>
-                    <p>Software Engineer</p>
+                    <h1 class="resume-name">Daniel Checketts</h1>
+                    <p class="resume-title">Software Engineer</p>
                 </div>
 
-                <div aria-labelledby="summary-heading">
-                    <h2 id="summary-heading">Professional Summary</h2>
+                <div class="resume-profile" aria-labelledby="summary-heading">
+                    <h2 class="resume-heading" id="summary-heading">Professional Summary</h2>
                     <p>Web Design and Development student at Brigham Young University-Idaho with experience in instructional support, customer service, and product marketing. Technical skills include JavaScript, Python, C#, HTML, CSS, SQL, Tailwind CSS, and MySQL. Brings communication, leadership, and time-management skills developed through teaching, sales, and full-time volunteer service.</p>
                 </div>
             </div>
-            <address>
-                <p>Rexburg, Idaho</p>
-                <ul>
-                    <li><a href="mailto:danielkchecketts@gmail.com">Email</a></li>
-                    <li><a href="tel:+18018672956">Phone</a></li>
-                    <li><a href="https://dchecketts.github.io/">Portfolio</a></li>
-                    <li><a href="https://www.linkedin.com/in/daniel-checketts">LinkedIn</a></li>
+            <address class="resume-contact">
+                <p class="resume-location">Rexburg, Idaho</p>
+                <ul class="resume-contact-links">
+                    <li class="resume-contact-item"><a class="resume-contact-link" href="mailto:danielkchecketts@gmail.com"><span class="screen-only">Email</span><span class="print-only">danielkchecketts@gmail.com</span></a></li>
+                    <li class="resume-contact-item"><a class="resume-contact-link" href="tel:+18018672956"><span class="screen-only">Phone</span><span class="print-only">+1 (801) 867-2956</span></a></li>
+                    <li class="resume-contact-item"><a class="resume-contact-link" href="https://dchecketts.github.io/"><span class="screen-only">Portfolio</span><span class="print-only">dchecketts.github.io</span></a></li>
+                    <li class="resume-contact-item"><a class="resume-contact-link" href="https://www.linkedin.com/in/daniel-checketts"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/daniel-checketts</span></a></li>
                 </ul>
             </address>
         </section>
 
-        <section aria-labelledby="experience-heading">
-            <h2 id="experience-heading">Work Experience</h2>
-            <article>
-                <h3>Sales Representative</h3>
-                <p>Vector Marketing &mdash; Rexburg, Idaho</p>
-                <p><time datetime="2026-04">April 2026</time> &ndash; Present</p>
-                <ul>
+        <section class="resume-section resume-experience" aria-labelledby="experience-heading">
+            <h2 class="resume-heading" id="experience-heading"><span class="screen-only">Work Experience</span><span class="print-only">Professional Experience</span></h2>
+            <article class="resume-entry">
+                <h3 class="resume-entry-heading">Sales Representative</h3>
+                <p class="resume-entry-details"><span class="resume-organization">Vector Marketing</span><span class="screen-only"> &mdash; </span><span class="resume-entry-location">Rexburg, Idaho</span></p>
+                <p class="resume-entry-dates"><time datetime="2026-04">April 2026</time> &ndash; Present</p>
+                <ul class="resume-list">
                     <li>Engage with prospective customers to market products, delivering high-quality client service and presentations.</li>
                     <li>Utilize active listening and persuasive communication to meet and exceed personal sales objectives.</li>
                 </ul>
             </article>
-            <article>
-                <h3>Teaching Assistant</h3>
-                <p>Brigham Young University-Idaho &mdash; Rexburg, Idaho</p>
-                <p><time datetime="2026-01">January 2026</time> &ndash; Present</p>
-                <ul>
+            <article class="resume-entry">
+                <h3 class="resume-entry-heading">Teaching Assistant</h3>
+                <p class="resume-entry-details"><span class="resume-organization">Brigham Young University-Idaho</span><span class="screen-only"> &mdash; </span><span class="resume-entry-location">Rexburg, Idaho</span></p>
+                <p class="resume-entry-dates"><time datetime="2026-01">January 2026</time> &ndash; Present</p>
+                <ul class="resume-list">
                     <li>Provide instructional support and guidance to students in academic web development coursework.</li>
                     <li>Assist faculty with grading, material preparation, and individual student mentorship.</li>
                 </ul>
             </article>
-            <article>
-                <h3>Missionary</h3>
-                <p>The Church of Jesus Christ of Latter-day Saints &mdash; Eugene, Oregon</p>
-                <p><time datetime="2023-06">June 2023</time> &ndash; <time datetime="2025-06">June 2025</time></p>
-                <ul>
+            <article class="resume-entry">
+                <h3 class="resume-entry-heading">Missionary</h3>
+                <p class="resume-entry-details"><span class="resume-organization">The Church of Jesus Christ of Latter-day Saints</span><span class="screen-only"> &mdash; </span><span class="resume-entry-location">Eugene, Oregon</span></p>
+                <p class="resume-entry-dates"><time datetime="2023-06">June 2023</time> &ndash; <time datetime="2025-06">June 2025</time></p>
+                <ul class="resume-list">
                     <li>Dedicated two years to full-time volunteer service, managing daily schedules, community outreach initiatives, and public teaching.</li>
                     <li>Developed advanced interpersonal communication, leadership, and cross-cultural relationship-building skills.</li>
                 </ul>
             </article>
-            <article>
-                <h3>Custodian</h3>
-                <p>Brigham Young University-Idaho &mdash; Rexburg, Idaho</p>
-                <p><time datetime="2022-09">September 2022</time> &ndash; <time datetime="2023-03">March 2023</time></p>
-                <ul>
+            <article class="resume-entry">
+                <h3 class="resume-entry-heading">Custodian</h3>
+                <p class="resume-entry-details"><span class="resume-organization">Brigham Young University-Idaho</span><span class="screen-only"> &mdash; </span><span class="resume-entry-location">Rexburg, Idaho</span></p>
+                <p class="resume-entry-dates"><time datetime="2022-09">September 2022</time> &ndash; <time datetime="2023-03">March 2023</time></p>
+                <ul class="resume-list">
                     <li>Maintained campus facilities to high standards of cleanliness, safety, and presentation.</li>
                     <li>Demonstrated strong time-management skills and reliability while balancing academic commitments.</li>
                 </ul>
             </article>
         </section>
 
-        <section aria-labelledby="education-heading">
-            <h2 id="education-heading">Education</h2>
-            <article>
-                <h3>Bachelor of Science in Web Design &amp; Development</h3>
-                <p>Brigham Young University-Idaho &mdash; Rexburg, Idaho</p>
-                <p><time datetime="2022-09">September 2022</time> &ndash; <time datetime="2029-07">July 2029</time> (Expected)</p>
+        <section class="resume-section resume-education" aria-labelledby="education-heading">
+            <h2 class="resume-heading" id="education-heading">Education</h2>
+            <article class="resume-entry">
+                <h3 class="resume-entry-heading">Bachelor of Science in Web Design &amp; Development</h3>
+                <p class="resume-entry-details"><span class="resume-organization">Brigham Young University-Idaho</span><span class="screen-only"> &mdash; </span><span class="resume-entry-location">Rexburg, Idaho</span></p>
+                <p class="resume-entry-dates"><time datetime="2022-09">September 2022</time> &ndash; <time datetime="2029-07">July 2029</time> (Expected)</p>
             </article>
-            <article>
-                <h3>High School Diploma</h3>
-                <p>Williamsburg Academy &mdash; Online</p>
-                <p><time datetime="2019-08">August 2019</time> &ndash; <time datetime="2022-06">June 2022</time></p>
+            <article class="resume-entry">
+                <h3 class="resume-entry-heading">High School Diploma</h3>
+                <p class="resume-entry-details"><span class="resume-organization">Williamsburg Academy</span><span class="screen-only"> &mdash; </span><span class="resume-entry-location">Online</span></p>
+                <p class="resume-entry-dates"><time datetime="2019-08">August 2019</time> &ndash; <time datetime="2022-06">June 2022</time></p>
             </article>
         </section>
 
-        <section aria-labelledby="skills-heading">
-            <h2 id="skills-heading">Skills</h2>
-            <ul>
-                <li>Languages: JavaScript, Python, C#, HTML, CSS, SQL</li>
-                <li>Frameworks &amp; Databases: Tailwind CSS, MySQL</li>
-                <li>Core Competencies: Customer Service, Product Marketing, Self-Learning, Interpersonal Communication</li>
+        <section class="resume-section resume-skills" aria-labelledby="skills-heading">
+            <h2 class="resume-heading" id="skills-heading"><span class="screen-only">Skills</span><span class="print-only">Technical Skills</span></h2>
+            <ul class="resume-list resume-skills-list">
+                <li><span class="resume-skill-label">Languages:</span> JavaScript, Python, C#, HTML, CSS, SQL</li>
+                <li><span class="resume-skill-label">Frameworks &amp; Databases:</span> Tailwind CSS, MySQL</li>
+                <li><span class="resume-skill-label">Core Competencies:</span> Customer Service, Product Marketing, Self-Learning, Interpersonal Communication</li>
             </ul>
         </section>
 
-        <section aria-labelledby="projects-heading">
-            <h2 id="projects-heading">Projects</h2>
-            <article>
-                <h3>Project Name</h3>
-                <p>Explain the project's purpose, your role, and the tools or methods you used.</p>
-                <ul>
-                    <li>Describe a feature, challenge you solved, or outcome you achieved.</li>
-                    <li>Explain what the project demonstrates about your skills.</li>
-                </ul>
-                <p><a href="https://example.com/project">View Project Name</a></p>
-            </article>
-        </section>
-
-        <section aria-labelledby="certifications-heading">
-            <h2 id="certifications-heading">Certifications</h2>
-            <ul>
-                <li>Web & Computer Programming &mdash; Brigham Young University-Idaho, <time datetime="2024-06">June 2024</time></li>
+        <section class="resume-section resume-certifications" aria-labelledby="certifications-heading">
+            <h2 class="resume-heading" id="certifications-heading">Certifications</h2>
+            <ul class="resume-list">
+                <li>Web & Computer Programming &mdash; Brigham Young University-Idaho, <time datetime="2026-08">August 2026</time></li>
             </ul>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="resume-footer">
         &copy; 2026 Daniel Checketts
     </footer>
 </body>

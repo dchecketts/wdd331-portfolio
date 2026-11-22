@@ -57,6 +57,8 @@
 .site-header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
     justify-content: space-between;
     background-color: var(--color-surface);
     padding-inline: var(--spacing-lg);
@@ -65,20 +67,26 @@
     margin-inline: var(--spacing-md);
     margin-block: var(--spacing-lg);
 
-    ul {
+    .site-header-links {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
 
-        li a:hover {
+        .site-header-link:hover {
             background-color: contrast-color(var(--color-surface));
             color: var(--color-surface);
             border-radius: var(--radius-lg);
         }
     }
 
-    a {
+    .site-header-link[aria-current="page"] {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    .site-header-link {
         text-decoration: none;
         color: contrast-color(var(--color-surface));
         padding-block: var(--spacing-sm);
@@ -94,70 +102,85 @@
     background-color: var(--color-bg);
 }
 
-.resume-header {
+.contact-page {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.contact-main {
+    max-width: 48rem;
+    margin-inline: auto;
+    padding: var(--spacing-lg);
+    font-size: 1.125rem;
+}
+
+.contact-intro {
+    margin-block: var(--spacing-lg) var(--spacing-xl);
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.2;
+        margin-block: var(--spacing-sm) var(--spacing-md);
+    }
+
+    p + p {
+        margin-block-start: var(--spacing-sm);
+    }
+
+    a {
+        overflow-wrap: anywhere;
+    }
+}
+
+.contact-eyebrow {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.contact-form {
+    display: grid;
+    gap: var(--spacing-lg);
+    padding: clamp(1rem, 4vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: color-mix(in oklch, var(--color-bg), var(--color-text) 3%);
+
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    button {
+        justify-self: start;
+    }
+}
+
+.form-field {
+    display: grid;
+    gap: var(--spacing-sm);
+
+    label {
+        font-weight: 700;
+    }
+}
+
+.form-checkbox {
     display: flex;
-    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--spacing-sm);
 
-    address {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        background-color: var(--color-surface);
-        color: contrast-color(var(--color-surface));
-        padding-inline: var(--spacing-lg);
-        padding-block: var(--spacing-md);
-        border-radius: var(--radius-lg);
-        margin-inline: var(--spacing-md);
-        margin-block: var(--spacing-lg);
-        gap: var(--spacing-lg);
-
-
-        p {
-            font-style: normal;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--spacing-lg);
-
-            li {
-                width: 100%;
-
-                a {
-                    display: block;
-                    background-color: contrast-color(var(--color-surface));
-                    color: var(--color-surface);
-                    text-decoration: none;
-                    text-align: center;
-                    padding-inline: var(--spacing-md);
-                    padding-block: var(--spacing-sm);
-                    border-radius: var(--radius-lg);
-                    width: 100%;
-                    font-style: normal;
-
-                    &:hover {
-                        background-color: color-mix(in oklch, var(--color-surface) 10%, contrast-color(var(--color-surface)));
-                    }
-                }
-            }
-
-        }
+    input {
+        flex-shrink: 0;
+        width: 1.125rem;
+        height: 1.125rem;
     }
+}
 
-    .resume-summary {
-        display: flex;
-        flex-direction: column;
+.form-hint {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
 
-        div:nth-child(2) {
-            margin-block: auto;
-            max-width: 75%;
-            text-align: justify;
-        }
-    }
+.form-status:empty {
+    display: none;
 }
