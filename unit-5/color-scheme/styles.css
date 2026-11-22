@@ -1,0 +1,116 @@
+/* System is the default; selecting a single scheme overrides it. */
+:root {
+    color-scheme: light dark;
+}
+
+html:has([name="theme"][value="light"]:checked) {
+    color-scheme: light;
+}
+
+html:has([name="theme"][value="dark"]:checked) {
+    color-scheme: dark;
+}
+
+/* Leave the page canvas and native control colors to the browser. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 1rem / 1.6 system-ui, sans-serif;
+}
+
+main {
+    max-inline-size: 44rem;
+    margin-inline: auto;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    line-height: 1.2;
+}
+
+section {
+    margin-block-start: 2rem;
+}
+
+fieldset {
+    min-inline-size: 0;
+}
+
+.theme-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.scheme-demo {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.scheme-demo > input,
+select,
+textarea,
+button {
+    font: inherit;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+}
+
+.scheme-demo > input:not([type="color"]):not([type="range"]),
+select,
+textarea,
+button {
+    padding: 0.5rem;
+}
+
+.scheme-demo > label:not(:first-child),
+.scheme-demo fieldset {
+    margin-block-start: 0.5rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    justify-self: start;
+    cursor: pointer;
+}
+
+.native-card {
+    background: Field;
+    color: FieldText;
+    border: 1px solid ButtonBorder;
+    padding: 1rem;
+}
+
+.native-card p:first-child {
+    margin-block-start: 0;
+}
+
+mark {
+    background: Highlight;
+    color: HighlightText;
+}
+
+a {
+    color: LinkText;
+}
+
+.scroll-box {
+    block-size: 10rem;
+    overflow-y: scroll;
+    border: 1px solid ButtonBorder;
+    padding-inline: 1rem;
+    margin-block-start: 1rem;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 1rem;
+    background: ButtonFace;
+    color: ButtonText;
+}
