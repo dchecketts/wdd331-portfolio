@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A live CSS typography lab: build a campus design night announcement with text properties and font-relative units.">
+    <title>Typography Lab | Daniel Checketts</title>
+    <script src="../../js/theme-preference.js"></script>
+    <script src="demo.js" defer></script>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+    <nav aria-label="Primary">
+        <a href="../../index.html">&larr; Home</a>
+        <ul>
+            <li><a href="#wrapping">Wrap</a></li>
+            <li><a href="#drop-cap">Initial</a></li>
+            <li><a href="#clamping">Clamp</a></li>
+            <li><a href="#units">Measure</a></li>
+            <li><a href="#rhythm">Rhythm</a></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+    <div class="page-intro">
+        <p class="eyebrow">Unit 5 · Live typography lab</p>
+        <h1>One event. Five typography experiments.</h1>
+        <p>Build an announcement for a fictional campus design night. Change a setting, predict the result, and explain what the browser does.</p>
+        <button type="button" id="reset" hidden data-enhanced>Reset all experiments</button>
+    </div>
+    <aside class="warning" aria-label="Browser support">
+        <p id="support">New text features may render differently between browsers. Each experiment has a readable CSS default.</p>
+    </aside>
+
+    <section id="wrapping" aria-labelledby="wrapping-title">
+        <div class="section-heading">
+            <p class="eyebrow">01 / The event poster</p>
+            <h2 id="wrapping-title">Can you fix the last line?</h2>
+            <p class="demo-prompt"><strong>Demonstrate:</strong> start with normal wrapping, narrow the poster, then switch to balance. Edit the headline and repeat. Try pretty on the longer invitation.</p>
+        </div>
+        <div class="controls" hidden data-enhanced>
+            <label for="wrap-mode">Wrapping</label>
+            <select id="wrap-mode" aria-controls="poster"><option value="wrap">Normal</option><option value="balance">Balance</option><option value="pretty">Pretty</option></select>
+            <label for="poster-width">Poster width</label>
+            <input id="poster-width" type="range" min="18" max="36" value="26" aria-controls="poster">
+            <output id="poster-width-value" for="poster-width">26rem</output>
+            <label for="poster-title" class="full-row">Your headline</label>
+            <input id="poster-title" class="full-row" type="text" value="Bring your unfinished ideas to an evening of design" aria-controls="live-headline">
+        </div>
+        <article class="sample poster" id="poster">
+            <p class="eyebrow">Design club / Open studio</p>
+            <h3 class="headline" id="live-headline">Bring your unfinished ideas to an evening of design</h3>
+            <p class="invitation">Pull up a chair, share a sketch, and help someone see their project in a new way. Bring a question you have been putting off or a first draft that needs a fresh pair of eyes. Everyone has something to contribute.</p>
+            <p class="sample-caption">Friday · 6 PM · Studio 204</p>
+        </article>
+        <pre aria-label="Current wrapping CSS"><code id="wrap-code">.poster h3, .poster .invitation { text-wrap: wrap; }
+.poster { max-inline-size: 26rem; }</code></pre>
+        <p class="note">Watch the headline’s ragged edge. Balance suits short text; pretty lets the browser improve paragraph breaks. At some widths, two modes produce the same result.</p>
+    </section>
+
+    <section id="drop-cap" aria-labelledby="drop-cap-title">
+        <div class="section-heading">
+            <p class="eyebrow">02 / The organizer’s introduction</p>
+            <h2 id="drop-cap-title">Make an entrance with one letter</h2>
+            <p class="demo-prompt"><strong>Demonstrate:</strong> turn the initial off and on. Compare a three-line initial sinking three lines with one sinking only two.</p>
+        </div>
+        <div class="controls" hidden data-enhanced>
+            <label for="initial-size">Letter height</label>
+            <select id="initial-size" aria-controls="opening"><option value="1">Off</option><option value="2">2 lines</option><option value="3" selected>3 lines</option><option value="4">4 lines</option></select>
+            <label for="initial-sink">Sink depth</label>
+            <select id="initial-sink" aria-controls="opening"><option value="1">1 line</option><option value="2">2 lines</option><option value="3" selected>3 lines</option><option value="4">4 lines</option></select>
+        </div>
+        <article class="sample reading-sample">
+            <h3>A place for work in progress</h3>
+            <p class="drop-cap" id="opening">Some of the best conversations begin with a rough draft. At open studio, we make space for the half-built website, the poster with too many fonts, and the idea still living in a notebook. You do not need a polished presentation. Set your work on the table, tell us where you got stuck, and let the conversation begin.</p>
+        </article>
+        <pre aria-label="Current initial-letter CSS"><code id="initial-code">.drop-cap::first-letter {
+    -webkit-initial-letter: 3 3;
+    initial-letter: 3 3;
+}</code></pre>
+    </section>
+
+    <section id="clamping" aria-labelledby="clamping-title">
+        <div class="section-heading">
+            <p class="eyebrow">03 / The event listing</p>
+            <h2 id="clamping-title">How much belongs in a preview?</h2>
+            <p class="demo-prompt"><strong>Demonstrate:</strong> show the full copy, enable the clamp, then reduce it to two lines. The full description stays available below.</p>
+        </div>
+        <div class="controls" hidden data-enhanced>
+            <label class="check-label"><input id="clamp-enabled" type="checkbox" checked aria-controls="event-preview"> Clamp preview</label>
+            <label for="clamp-lines">Lines</label>
+            <input id="clamp-lines" type="range" min="1" max="6" value="3" aria-controls="event-preview">
+            <output for="clamp-lines" id="clamp-value">3 lines</output>
+        </div>
+        <article class="sample event-card">
+            <p class="eyebrow">Workshop / 30 minutes</p>
+            <h3>Rescue your first draft</h3>
+            <p class="clamped" id="event-preview">Turn a cluttered event announcement into something people can scan from across the room. We will start with a messy draft, decide which words deserve attention, and try three different arrangements. Bring a laptop or a pencil; the exercise works with either. You will leave with a new version and a few useful questions to ask on your next project.</p>
+            <details>
+                <summary>Read the full workshop description</summary>
+                <p>Turn a cluttered event announcement into something people can scan from across the room. We will start with a messy draft, decide which words deserve attention, and try three different arrangements. Bring a laptop or a pencil; the exercise works with either. You will leave with a new version and a few useful questions to ask on your next project.</p>
+            </details>
+        </article>
+        <pre aria-label="Current line clamp CSS"><code id="clamp-code">.clamped {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}</code></pre>
+    </section>
+
+    <section id="units" aria-labelledby="units-title">
+        <div class="section-heading">
+            <p class="eyebrow">04 / The email invitation</p>
+            <h2 id="units-title">Same measure. Different font.</h2>
+            <p class="demo-prompt"><strong>Demonstrate:</strong> set the measure to 35ch, switch fonts, then increase the text size. Compare the rendered width in pixels. Watch the square beside the lowercase letters scale with the font’s x-height.</p>
+        </div>
+        <div class="controls" hidden data-enhanced>
+            <label for="measure">Measure</label>
+            <input id="measure" type="range" min="25" max="85" value="45" aria-controls="measure-preview">
+            <output for="measure" id="measure-value">45ch</output>
+            <label for="sample-font">Font</label>
+            <select id="sample-font" aria-controls="measure-preview"><option value="body">Portfolio body</option><option value="mono">Monospace</option><option value="serif">Serif</option></select>
+            <label for="text-size">Text size</label>
+            <input id="text-size" type="range" min="16" max="32" value="20" aria-controls="measure-preview">
+            <output id="size-value" for="text-size">20px</output>
+        </div>
+        <div class="sample measure-stage">
+            <div class="measure-preview" id="measure-preview">
+                <p class="x-height-reference"><span class="inline-marker" aria-hidden="true"></span> xxxxx · a marker sized in ex</p>
+                <p>Your next idea does not have to start on a blank page. Join us at open studio to trade feedback, ask a small question, or try a completely different direction. We will have space to spread out, a few short activities, and time to work on whatever you bring.</p>
+            </div>
+        </div>
+        <p class="note"><output id="measure-metrics">The sample uses a maximum width in ch.</output> Available space can limit the width. A ch measures the advance of “0”; it counts equal-width characters in monospace, rather than arbitrary letters in a proportional font.</p>
+        <pre aria-label="Current font-relative CSS"><code id="measure-code">.invitation { max-inline-size: 45ch; font-size: 20px; }
+.marker { inline-size: 1ex; block-size: 1ex; }</code></pre>
+    </section>
+
+    <section id="rhythm" aria-labelledby="rhythm-title">
+        <div class="section-heading">
+            <p class="eyebrow">05 / The follow-up note</p>
+            <h2 id="rhythm-title">Which spacing changes with the text?</h2>
+            <p class="demo-prompt"><strong>Demonstrate:</strong> increase the sample line height and compare the tinted space. Then change the root line height: the rlh spacing now responds.</p>
+        </div>
+        <div class="controls" hidden data-enhanced>
+            <label for="line-height">Sample line height</label>
+            <input id="line-height" type="range" min="1.2" max="2.4" step="0.1" value="1.6" aria-controls="rhythm-preview">
+            <output for="line-height" id="rhythm-value">1.6</output>
+            <label for="root-height">Root line height</label>
+            <input id="root-height" type="range" min="16" max="40" value="24" aria-controls="rhythm-preview">
+            <output for="root-height" id="root-value">24px</output>
+        </div>
+        <div class="comparison rhythm-preview" id="rhythm-preview">
+            <article class="sample rhythm-local">
+                <h3>Padding: 1lh</h3>
+                <p>Thanks for bringing your work to the table. Keep the sketch you almost threw away.</p>
+                <p>Next time, bring the version that surprises you.</p>
+            </article>
+            <article class="sample rhythm-root">
+                <h3>Padding: 1rlh</h3>
+                <p>Thanks for bringing your work to the table. Keep the sketch you almost threw away.</p>
+                <p>Next time, bring the version that surprises you.</p>
+            </article>
+        </div>
+        <p class="note"><output id="rhythm-metrics">Tinted padding shows the space after the text.</output></p>
+        <pre aria-label="Current rhythm CSS"><code id="rhythm-code">html { line-height: 24px; }
+.note p { line-height: 1.6; }
+.local p { padding-block-end: 1lh; }
+.shared p { padding-block-end: 1rlh; }</code></pre>
+    </section>
+</main>
+<footer><p>&copy; Daniel Checketts 2026 · <a href="../../index.html">Back to portfolio</a></p></footer>
+</body>
+</html>

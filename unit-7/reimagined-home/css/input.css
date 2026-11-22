@@ -68,15 +68,15 @@ body {
 }
 
 @utility button-list {
-    @apply flex flex-col items-center my-5 w-fit mx-auto;
+    @apply flex flex-col items-center my-5 w-fit mx-auto md:flex-row md:gap-3;
 
     li {
-        @apply button-link w-full;
+        @apply button-link w-full whitespace-nowrap;
     }
 }
 
 @utility button-link {
-    @apply text-white bg-brand-500 rounded-full px-3 py-2 my-4 text-center;
+    @apply text-white bg-brand-500 rounded-full px-3 py-2 my-4 text-center md:px-5;
 }
 
 

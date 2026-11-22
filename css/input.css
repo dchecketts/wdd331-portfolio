@@ -1,0 +1,192 @@
+@import "./tokens/variables.css";
+@import "tailwindcss" source(none);
+@import "./tokens/colors.css" layer(theme);
+
+@source "../resume.html";
+
+@theme inline {
+    --font-body: var(--font-family-body), sans-serif;
+    --font-heading: var(--font-family-heading), sans-serif;
+    --font-print: Arial, sans-serif;
+
+    --color-print-heading: #1e3a5f;
+    --color-print-text: #475569;
+    --color-print-strong: #303b4c;
+    --color-print-muted: #64748b;
+    --color-print-link: #2563a6;
+    --color-print-border: #dbe2eb;
+}
+
+@layer components {
+    .resume-page {
+        @apply font-body text-(length:--font-size-body) leading-[1.6];
+        @apply print:font-print print:text-[10pt] print:leading-[1.4] print:[color-scheme:light] print:[print-color-adjust:exact] print:bg-white print:text-black;
+    }
+
+    .screen-only {
+        @apply print:hidden;
+    }
+
+    .resume-nav {
+        @apply flex flex-wrap items-center justify-between gap-2 bg-(--color-surface) p-5;
+    }
+
+    .resume-nav-brand {
+        @apply text-[contrast-color(var(--color-surface))];
+    }
+
+    .resume-nav-links {
+        @apply flex flex-wrap gap-2 sm:gap-5;
+    }
+
+    .resume-nav-link {
+        @apply text-[contrast-color(var(--color-surface))] px-5 py-3 hover:bg-[contrast-color(var(--color-surface))] hover:text-[var(--color-surface)] rounded-md;
+    }
+
+    .resume-main {
+        @apply mx-auto max-w-[75rem] p-6 text-(--color-text);
+        @apply print:flex print:max-w-none print:flex-col print:p-0 print:text-print-text;
+    }
+
+    .resume-header {
+        @apply flex flex-col items-stretch justify-between gap-8 md:flex-row;
+        @apply print:order-0 print:block print:border-b print:border-print-link print:pb-3 print:mb-0;
+    }
+
+    .resume-summary {
+        @apply flex min-w-0 flex-1 flex-col gap-6;
+        @apply print:block;
+    }
+
+    .resume-name {
+        @apply font-heading text-(length:--font-size-heading-lg) font-bold;
+        @apply print:font-print print:text-[24pt] print:leading-tight print:uppercase print:text-print-heading print:mb-2;
+    }
+
+    .resume-title {
+        @apply print:text-[12pt] print:italic;
+    }
+
+    .resume-profile {
+        @apply my-auto max-w-[65ch] text-start;
+        @apply print:hidden;
+    }
+
+    .resume-heading {
+        @apply mb-4 font-heading text-(length:--font-size-heading-sm) font-bold;
+        @apply print:mb-1.5 print:font-print print:text-[14pt] print:leading-tight print:uppercase print:text-print-heading print:break-after-avoid;
+    }
+
+    .resume-contact {
+        @apply m-0 flex shrink-0 flex-col items-stretch justify-between gap-6 rounded-lg bg-(--color-surface) px-6 py-4 text-center text-[contrast-color(var(--color-surface))] shadow-(--shadow-sm) md:items-center;
+        @apply print:mt-2 print:flex-row print:flex-wrap print:items-baseline print:justify-start print:gap-x-3 print:gap-y-1 print:rounded-none print:p-0 print:text-left print:text-[8pt] print:not-italic print:bg-white print:text-black print:shadow-none;
+    }
+
+    .resume-location {
+        @apply font-bold not-italic md:whitespace-nowrap;
+        @apply print:font-normal;
+    }
+
+    .resume-contact-links {
+        @apply flex list-none flex-col items-center gap-6;
+        @apply print:flex-row print:flex-wrap print:gap-x-3 print:gap-y-1;
+    }
+
+    .resume-contact-item {
+        @apply w-full;
+        @apply print:w-auto;
+    }
+
+    .resume-contact-link {
+        @apply block w-full rounded-lg bg-[contrast-color(var(--color-surface))] px-4 py-2 text-center not-italic text-(--color-surface) no-underline hover:bg-[color-mix(in_oklch,var(--color-surface)_10%,contrast-color(var(--color-surface)))] focus-visible:outline-2 focus-visible:outline-offset-4;
+        @apply print:rounded-none print:p-0 print:text-left print:bg-white print:text-print-link;
+    }
+
+    .print-only {
+        @apply hidden;
+        @apply print:inline;
+    }
+
+    .resume-entry {
+        @apply break-inside-avoid;
+        @apply print:grid print:grid-cols-[1fr_auto] print:gap-x-3;
+    }
+
+    .resume-entry-heading {
+        @apply mb-1 font-heading text-(length:--font-size-body) font-bold;
+        @apply print:col-start-1 print:row-start-2 print:mb-0 print:font-print print:text-[10pt] print:font-normal print:italic;
+    }
+
+    .resume-entry-details {
+        @apply print:contents;
+    }
+
+    .resume-organization {
+        @apply print:col-start-1 print:row-start-1 print:font-bold print:text-print-strong;
+    }
+
+    .resume-entry-location {
+        @apply print:col-start-2 print:row-start-2 print:text-right print:italic print:text-print-muted;
+    }
+
+    .resume-entry-dates {
+        @apply text-(--color-text-muted);
+        @apply print:col-start-2 print:row-start-1 print:text-right print:text-[9pt] print:text-print-muted;
+    }
+
+    .resume-list {
+        @apply mt-2 list-disc pl-6;
+        @apply print:col-span-2 print:mt-1 print:pl-4;
+    }
+
+    .resume-skill-label {
+        @apply print:font-bold print:text-print-strong;
+    }
+
+    .resume-footer {
+        @apply mt-8 flex flex-col items-center bg-(--color-bg) px-6 py-4;
+        @apply print:hidden;
+    }
+
+    .resume-section {
+        @apply mt-8 print:mt-4;
+    }
+
+    .resume-section > .resume-heading {
+        @apply border-b-2 border-(--color-surface) pb-2;
+        @apply print:border-b print:border-print-border print:pb-1;
+    }
+
+    .resume-skills {
+        @apply print:order-1;
+    }
+
+    .resume-education {
+        @apply print:order-2;
+    }
+
+    .resume-experience {
+        @apply print:order-3;
+    }
+
+    .resume-certifications {
+        @apply print:order-4;
+    }
+
+    .resume-entry + .resume-entry {
+        @apply mt-6 print:mt-3;
+    }
+
+    .resume-list > li + li {
+        @apply mt-2 print:mt-1;
+    }
+
+    .resume-skills-list {
+        @apply print:list-none print:pl-0;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 16mm 15mm;
+}
