@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tell the browser which schemes we support before the CSS loads. -->
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="A simple CSS color-scheme demo with native controls, scrollbars, and system colors.">
+    <title>Color Scheme Demo | Daniel Checketts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+    <a href="../../index.html">&larr; Back to portfolio</a>
+    <h1><code>color-scheme</code> demo</h1>
+    <p>Change the scheme and watch the browser redraw the page background and native form controls. No JavaScript or separate light and dark palettes are needed.</p>
+
+    <fieldset class="theme-picker">
+        <legend>Choose a color scheme</legend>
+        <label><input type="radio" name="theme" value="light"> Light</label>
+        <label><input type="radio" name="theme" value="system" checked> System</label>
+        <label><input type="radio" name="theme" value="dark"> Dark</label>
+    </fieldset>
+    <p>Light and Dark force one scheme. System uses <code>light dark</code> to follow your OS preference; try changing your system appearance while it is selected.</p>
+
+    <section aria-labelledby="controls-heading">
+        <h2 id="controls-heading">Native controls</h2>
+        <p>Open the date picker and category menu, then compare them in light and dark.</p>
+        <form class="scheme-demo">
+            <label for="sd-name">Name</label>
+            <input type="text" id="sd-name" autocomplete="name" placeholder="Your name">
+
+            <label for="sd-email">Email</label>
+            <input type="email" id="sd-email" autocomplete="email" placeholder="you@example.com">
+
+            <label for="sd-date">Date</label>
+            <input type="date" id="sd-date">
+
+            <label for="sd-color">Favorite color</label>
+            <input type="color" id="sd-color" value="#006eb6">
+
+            <label for="sd-range">Volume</label>
+            <input type="range" id="sd-range" min="0" max="100" value="50">
+
+            <label for="sd-select">Category</label>
+            <select id="sd-select">
+                <option>Design</option>
+                <option>Development</option>
+                <option>Research</option>
+            </select>
+
+            <label><input type="checkbox" checked> Subscribe to updates</label>
+
+            <fieldset>
+                <legend>Size</legend>
+                <label><input type="radio" name="sd-size" value="small" checked> Small</label>
+                <label><input type="radio" name="sd-size" value="medium"> Medium</label>
+                <label><input type="radio" name="sd-size" value="large"> Large</label>
+            </fieldset>
+
+            <label for="sd-msg">Message</label>
+            <textarea id="sd-msg" rows="3" placeholder="Write something..."></textarea>
+            <button type="reset">Reset form</button>
+        </form>
+    </section>
+
+    <section aria-labelledby="system-heading">
+        <h2 id="system-heading">System colors &amp; scrollbars</h2>
+        <div class="native-card">
+            <p>This custom card uses <code>Field</code> and <code>FieldText</code>. Its colors follow the active scheme, just like the inputs above.</p>
+            <p><mark>Highlight / HighlightText</mark> style this highlighted text.</p>
+            <a href="#css-heading">This link uses LinkText.</a>
+        </div>
+        <div class="scroll-box" tabindex="0" role="region" aria-label="Scrollable color-scheme notes">
+            <p>Scroll here to inspect the browser’s native scrollbar.</p>
+            <p><strong>Light:</strong> native controls use the browser’s light palette.</p>
+            <p><strong>Dark:</strong> native controls use the browser’s dark palette.</p>
+            <p><strong>System:</strong> the browser chooses from the supported light and dark schemes.</p>
+            <p>The root scheme also changes the default page canvas. This page does not set a background color on html or body.</p>
+            <p>System colors let custom elements match the native palette without hard-coded color values.</p>
+            <p>You have reached the bottom.</p>
+        </div>
+        <p><small>Native controls and scrollbar appearance vary by browser and OS. Overlay scrollbars may only appear while scrolling.</small></p>
+    </section>
+
+    <section aria-labelledby="css-heading">
+        <h2 id="css-heading">The key CSS</h2>
+        <pre><code>:root { color-scheme: light dark; }
+
+html:has([name="theme"][value="light"]:checked) {
+    color-scheme: light;
+}
+
+html:has([name="theme"][value="dark"]:checked) {
+    color-scheme: dark;
+}
+
+.native-card {
+    background: Field;
+    color: FieldText;
+}</code></pre>
+        <p>The head also includes <code>&lt;meta name="color-scheme" content="light dark"&gt;</code> before the stylesheet so the browser can choose an appropriate initial canvas before CSS loads.</p>
+    </section>
+</main>
+</body>
+</html>
